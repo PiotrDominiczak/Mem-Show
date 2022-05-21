@@ -105,10 +105,10 @@ export const SET_STARRED = "SET_STARRED";
 
 export const memReducer = (state = initStore, action) => {
 	switch (action.type) {
-        case ADD_MEM:
-            console.log(action.payload)
-            return  {
-                ...state,
+		case ADD_MEM:
+			console.log(action.payload);
+			return {
+				...state,
 				mems: [...state.mems, action.payload],
 			};
 

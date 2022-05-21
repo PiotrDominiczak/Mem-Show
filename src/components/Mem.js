@@ -13,7 +13,9 @@ export const CreateMem = (mem) => {
 	return (
 		<div key={mem.index} className="memCard">
 			<div className="memHeader">
-				<h3 className="memTitle"><span className="label">tytuł:</span> {mem.title}</h3>
+				<h3 className="memTitle">
+					<span className="label">tytuł:</span> {mem.title}
+				</h3>
 				<button
 					className={mem.isStarred ? "star active" : "star"}
 					onClick={(e) => {

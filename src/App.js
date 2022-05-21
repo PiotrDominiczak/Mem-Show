@@ -6,7 +6,6 @@ import { MainPage } from "./components/MainPage";
 import { AddMem } from "./components/AddMem";
 import { Favorited } from "./components/Favorited";
 function App() {
-	
 	return (
 		<div className="App">
 			<aside>

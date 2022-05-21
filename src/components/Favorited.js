@@ -3,11 +3,9 @@ import { CreateMem } from "./Mem";
 import { Link } from "react-router-dom";
 
 export const scrollArrow = (
-	
-		<button className="arrow">
-			<i className="fas fa-angle-down"></i>
-		</button>
-	
+	<button className="arrow">
+		<i className="fas fa-angle-down"></i>
+	</button>
 );
 
 export const Favorited = () => {
@@ -19,9 +17,7 @@ export const Favorited = () => {
 		<>
 			<div className="wrapper">
 				<h2>Twoje ulubione memy</h2>
-				<p>
-					Zapraszamy do przejrzenia Twoich ulubionych memów.
-				</p>
+				<p>Zapraszamy do przejrzenia Twoich ulubionych memów.</p>
 
 				{favoritedMems.length > 0 ? (
 					<a href="#mems">{scrollArrow}</a>
@@ -30,13 +26,15 @@ export const Favorited = () => {
 						Przepraszamy, niestety obecnie żaden z naszych memów nie
 						jest przez Ciebie ulubiony.
 						<br />
-						Przejdź do {<Link to="/regular"> niedocenione</Link>} lub {<Link to="/hot"> hot</Link>} i
-						ogwiazdkuj te memy, które najbardziej przypadną Ci do gustu.
+						Przejdź do {
+							<Link to="/regular"> niedocenione</Link>
+						}{" "}
+						lub {<Link to="/hot"> hot</Link>} i ogwiazdkuj te memy,
+						które najbardziej przypadną Ci do gustu.
 					</p>
 				)}
 			</div>
-			<div id="mems">
-			{favoritedMems}</div>
+			<div id="mems">{favoritedMems}</div>
 		</>
 	);
 };

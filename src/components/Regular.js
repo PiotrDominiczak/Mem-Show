@@ -7,13 +7,13 @@ export const Regular = (mem) => {
 	const mems = useSelector((state) => state.mems);
 	const regularList = mems.filter((mem) => mem.upvotes - mem.downvotes <= 5);
 	const regularMems = regularList.map((mem) => CreateMem(mem));
-	
+
 	return (
 		<>
 			<div className="wrapper">
 				<h2>Niedocenione</h2>
 				<p>Te niedocenione memy czekają na Twoją ocenę.</p>
-				
+
 				{regularMems.length > 0 ? (
 					<a href="#mems">{scrollArrow}</a>
 				) : (
@@ -27,8 +27,8 @@ export const Regular = (mem) => {
 						{<Link to="/add"> dodaj swój mem</Link>}.
 					</p>
 				)}
-			</div><div id="mems">
-			{regularMems}</div>
+			</div>
+			<div id="mems">{regularMems}</div>
 		</>
 	);
 };

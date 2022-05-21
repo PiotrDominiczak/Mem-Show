@@ -3,11 +3,9 @@ import { CreateMem } from "./Mem";
 import { Link } from "react-router-dom";
 
 export const scrollArrow = (
-	
-		<button className="arrow">
-			<i className="fas fa-angle-down"></i>
-		</button>
-	
+	<button className="arrow">
+		<i className="fas fa-angle-down"></i>
+	</button>
 );
 
 export const Hot = () => {
@@ -36,8 +34,7 @@ export const Hot = () => {
 					</p>
 				)}
 			</div>
-			<div id="mems">
-			{hotMems}</div>
+			<div id="mems">{hotMems}</div>
 		</>
 	);
 };
