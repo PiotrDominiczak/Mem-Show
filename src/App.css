@@ -1,38 +1,270 @@
 .App {
-  text-align: center;
+	display: flex;
+	min-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* nawigacja */
+
+aside {
+	width: 30vw;
+	min-height: 100vh;
+	background-color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+img.logo {
+	position: fixed;
+	left: 0;
+	margin: 5vh 2vw;
+	opacity: 60%;
+	width: 7vw;
+	height: 7vw;
+	transition: 0.4s linear;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img.logo:hover {
+	opacity: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+	position: fixed;
+	margin-left: 2vw;
+	bottom: 2rem;
+	text-align: left;
+
+	font-size: 2.1vw;
+	font-weight: 100;
+	text-transform: uppercase;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav a {
+	line-height: 6vh;
+	color: white;
+	text-decoration: none;
+	opacity: 50%;
+	transition: 0.4s linear;
+}
+
+nav a:hover {
+	font-weight: 700;
+	opacity: 100%;
+}
+nav a.active {
+	font-weight: 700;
+	opacity: 100%;
+	color: goldenrod;
+}
+
+/* główny kontent */
+
+main {
+	background-color: black;
+	color: white;
+	width: 100%;
+	padding: 0 2vw;
+}
+main .wrapper {
+	position: relative;
+	height: 100vh;
+}
+main h2 {
+	position: relative;
+	top: 30vh;
+	font-size: 8rem;
+	text-transform: uppercase;
+	margin-bottom: 2vh;
+	opacity: 80%;
+}
+main p {
+	position: relative;
+	top: 30vh;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+main h3 {
+	font-size: 2rem;
+}
+
+main span.label {
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 400;
+}
+
+/* stylowanie pojedynczego mema */
+
+.infoNoMems {
+	margin: 5rem auto;
+	font-size: 1.2rem;
+}
+
+.infoNoMems a {
+	color: goldenrod;
+	text-decoration: none;
+	font-weight: 400;
+	transition: 0.2s linear;
+}
+.infoNoMems a:hover {
+	font-weight: 900;
+}
+
+div.memCard {
+	width: 70%;
+	margin: 5vh auto;
+	border: 1px white solid;
+	padding: 2%;
+	text-align: center;
+}
+div.memHeader {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	align-content: right;
+}
+.memTitle {
+	text-align: left;
+	flex-grow: 2;
+}
+.star {
+	background-color: transparent;
+	border-style: solid;
+	border-color: white;
+	padding: 10px;
+	border-radius: 50%;
+	color: white;
+	font-size: 2rem;
+	transition: 0.4s linear;
+}
+
+.star:hover {
+	color: goldenrod;
+	border-color: goldenrod;
+	cursor: pointer;
+}
+
+.star.active {
+	color: goldenrod;
+	border-color: goldenrod;
+}
+
+.star.active:hover {
+	color: white;
+	border-color: white;
+}
+
+div.memCard img {
+	width: 80%;
+	margin: 5vh auto;
+}
+
+.voteBtn {
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	width: 40%;
+	font-size: 3rem;
+	margin-left: 1px;
+}
+.voteBtn:hover {
+	color: goldenrod;
+	border-color: goldenrod;
+	cursor: pointer;
+}
+
+/* strzałka scrollowania */
+
+.arrow {
+	position: absolute;
+	bottom: 10vh;
+	left: 50%;
+	transform: translate(-50%);
+	background-color: transparent;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: none;
+	color: rgba(255, 255, 255, 0.7);
+	font-size: 90px;
+	text-shadow: 0px -35px rgba(255, 255, 255, 0.5),
+		0px -70px rgb(255, 255, 255, 0.3);
+	overflow: hidden;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	transition: 0.4 linear;
+}
+
+.arrow:hover {
+	color: goldenrod;
+	text-shadow: 0px -35px rgba(218, 165, 32, 0.5),
+		0px -70px rgb(218, 165, 32, 0.3);
+	cursor: pointer;
+	border-color: goldenrod;
+}
+.arrow i {
+	animation: arrow linear infinite 1s;
+}
+@keyframes arrow {
+	0% {
+		transform: translateY(-200%);
+	}
+	100% {
+		transform: translateY(200%);
+	}
+}
+
+/* dodawanie mema */
+
+main form {
+	position: relative;
+	top: 30vh;
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+button.addMemBtn {
+	position: relative;
+	text-align: right;
+	top: 35vh;
+	font-size: 1.5rem;
+	font-weight: 300;
+	background-color: black;
+	color: white;
+	border: 1px solid white;
+	padding: 1rem;
+	transition: 0.4s linear;
+}
+button.addMemBtn:hover {
+	color: goldenrod;
+	border-color: goldenrod;
+	padding: 1rem;
+	cursor: pointer;
+}
+
+label {
+	display: block;
+	font-size: 2rem;
+}
+
+input {
+	width: 50%;
+	font-size: 2rem;
+	margin: 1rem 0;
+	opacity: 0.8;
+}
+
+.displayNone {
+	display: none;
+}
+
+p.thanks {
+	display: block;
+}
+
+.displayNone span {
+	color: goldenrod;
+	font-weight: 400;
+	transition: 0.2s linear;
+}
+.displayNone span:hover {
+	cursor: pointer;
+	font-weight: 900;
 }
