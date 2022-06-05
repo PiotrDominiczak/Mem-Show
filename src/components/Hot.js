@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { CreateMem } from "./Mem";
 import { Link } from "react-router-dom";
+import { MobileLogo } from "./MobileLogo";
 
 export const scrollArrow = (
 	<button className="arrow">
@@ -16,6 +17,7 @@ export const Hot = () => {
 	return (
 		<>
 			<div className="wrapper">
+				<MobileLogo />
 				<h2>Hot mems</h2>
 				<p>
 					Zapraszamy do obejrzejnia najbardziej topowych i ulubionych
@@ -27,7 +29,7 @@ export const Hot = () => {
 				) : (
 					<p className="infoNoMems">
 						Przepraszamy, niestety obecnie żaden z naszych memów nie
-						jest hot.
+						jest wystarczająco gorący, by go tu wyświetlać.
 						<br />
 						Przejdź do {<Link to="/regular"> niedocenione</Link>} i
 						zagłosuj na te, które przypadną Ci do gustu.

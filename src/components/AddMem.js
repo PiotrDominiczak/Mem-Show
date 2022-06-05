@@ -3,6 +3,7 @@ import { ADD_MEM } from "../store/reducer";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import validator from "validator";
+import { MobileLogo } from "./MobileLogo";
 
 export const AddMem = () => {
 	const [title, setTitle] = useState("");
@@ -14,6 +15,7 @@ export const AddMem = () => {
 
 	return (
 		<div className="wrapper">
+			<MobileLogo />
 			<h2>dodaj mema</h2>
 			<p className="displayNone">
 				{title !== "" && validator.isURL(imgSrc)

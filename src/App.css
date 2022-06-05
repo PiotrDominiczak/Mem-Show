@@ -2,7 +2,9 @@
 	display: flex;
 	min-height: 100vh;
 }
-
+.mobile {
+	display: none;
+}
 /* nawigacja */
 
 aside {
@@ -18,7 +20,7 @@ img.logo {
 	opacity: 60%;
 	width: 7vw;
 	height: 7vw;
-	transition: 0.4s linear;
+	transition: opacity 0.4s linear;
 }
 
 img.logo:hover {
@@ -30,23 +32,21 @@ nav {
 	margin-left: 2vw;
 	bottom: 2rem;
 	text-align: left;
-
 	font-size: 2.1vw;
 	font-weight: 100;
 	text-transform: uppercase;
 }
 
 nav a {
-	line-height: 6vh;
 	color: white;
 	text-decoration: none;
 	opacity: 50%;
-	transition: 0.4s linear;
 }
 
 nav a:hover {
 	font-weight: 700;
 	opacity: 100%;
+	transition: 0.4s linear;
 }
 nav a.active {
 	font-weight: 700;
@@ -69,7 +69,7 @@ main .wrapper {
 main h2 {
 	position: relative;
 	top: 30vh;
-	font-size: 8rem;
+	font-size: 7rem;
 	text-transform: uppercase;
 	margin-bottom: 2vh;
 	opacity: 80%;
@@ -79,6 +79,7 @@ main p {
 	top: 30vh;
 	font-size: 1.5rem;
 	font-weight: 300;
+	padding-right: 5vw;
 }
 
 main h3 {
@@ -97,17 +98,20 @@ main span.label {
 	margin: 5rem auto;
 	font-size: 1.2rem;
 }
-
 .infoNoMems a {
 	color: goldenrod;
 	text-decoration: none;
 	font-weight: 400;
-	transition: 0.2s linear;
 }
 .infoNoMems a:hover {
 	font-weight: 900;
+	transition: 0.2s linear;
 }
-
+.infoNoMems br {
+	display: block;
+	content: " ";
+	margin-bottom: 24px;
+}
 div.memCard {
 	width: 70%;
 	margin: 5vh auto;
@@ -135,28 +139,23 @@ div.memHeader {
 	font-size: 2rem;
 	transition: 0.4s linear;
 }
-
 .star:hover {
 	color: goldenrod;
 	border-color: goldenrod;
 	cursor: pointer;
 }
-
 .star.active {
 	color: goldenrod;
 	border-color: goldenrod;
 }
-
 .star.active:hover {
 	color: white;
 	border-color: white;
 }
-
 div.memCard img {
 	width: 80%;
 	margin: 5vh auto;
 }
-
 .voteBtn {
 	background-color: black;
 	color: white;
@@ -169,6 +168,7 @@ div.memCard img {
 	color: goldenrod;
 	border-color: goldenrod;
 	cursor: pointer;
+	transition: 0.4s linear;
 }
 
 /* strzałka scrollowania */
@@ -179,12 +179,12 @@ div.memCard img {
 	left: 50%;
 	transform: translate(-50%);
 	background-color: transparent;
-	width: 120px;
-	height: 120px;
+	width: 10vh;
+	height: 10vh;
 	border-radius: 50%;
 	border: none;
 	color: rgba(255, 255, 255, 0.7);
-	font-size: 90px;
+	font-size: 9vh;
 	text-shadow: 0px -35px rgba(255, 255, 255, 0.5),
 		0px -70px rgb(255, 255, 255, 0.3);
 	overflow: hidden;
@@ -243,22 +243,27 @@ label {
 	display: block;
 	font-size: 2rem;
 }
-
 input {
-	width: 50%;
+	background-color: transparent;
+	border-radius: 10px;
+	border: 2px solid;
+	border-color: white;
+	width: 100%;
+	color: goldenrod;
 	font-size: 2rem;
 	margin: 1rem 0;
+	padding: 0.5rem;
 	opacity: 0.8;
 }
-
+input:focus {
+	border-color: goldenrod;
+}
 .displayNone {
 	display: none;
 }
-
 p.thanks {
 	display: block;
 }
-
 .displayNone span {
 	color: goldenrod;
 	font-weight: 400;
@@ -267,4 +272,132 @@ p.thanks {
 .displayNone span:hover {
 	cursor: pointer;
 	font-weight: 900;
+}
+
+/* Responsywność */
+
+@media screen and (max-width: 1920px) and (min-width: 1280px) {
+	main h2 {
+		font-size: 4.5rem;
+	}
+	nav {
+		font-size: 2.5vw;
+	}
+	aside {
+		width: 40vw;
+	}
+}
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+	main h2 {
+		font-size: 3rem;
+	}
+	nav {
+		font-size: 4vw;
+	}
+	aside {
+		width: 60vw;
+	}
+
+	div.memCard {
+		width: 90%;
+		padding: 2%;
+	}
+	.memTitle {
+		font-size: 24px;
+	}
+	.star {
+		padding: 5px;
+		font-size: 1.5rem;
+	}
+	div.memCard img {
+		width: 98%;
+		margin: 2vh auto;
+	}
+	.voteBtn {
+		border: 1px solid white;
+		width: 49%;
+		font-size: 2rem;
+	}
+	main p {
+		font-size: 18px;
+	}
+	.infoNoMems {
+		font-size: 1rem;
+	}
+	img.logo {
+		width: 15vw;
+		height: 15vw;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	aside {
+		display: none;
+	}
+	.mobile {
+		display: block;
+	}
+	.mobile img.logoMobile {
+		position: absolute;
+		right: 8px;
+		top: 8px;
+		opacity: 100%;
+		width: 15vw;
+		height: 15vw;
+	}
+	nav.mobile {
+		margin-left: 8px;
+		font-size: 9vw;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+	a.mobile {
+		font-size: 8vw;
+		color: goldenrod !important;
+	}
+	.mobile a {
+		color: white;
+		text-decoration: none;
+		opacity: 95%;
+		text-transform: uppercase;
+	}
+	main h2 {
+		top: 18vh;
+		font-size: 3rem;
+		margin: 0 8px;
+	}
+	main p {
+		position: relative;
+		top: 20vh;
+		font-size: 1.2rem;
+		font-weight: 300;
+		margin: 0 8px;
+	}
+	.infoNoMems {
+		margin: 2rem 8px;
+	}
+	div.memCard {
+		width: 100%;
+	}
+	.memTitle {
+		font-size: 18px;
+	}
+	.star {
+		padding: 5px;
+		font-size: 1.1rem;
+	}
+	div.memCard img {
+		width: 100%;
+		margin: 2vh auto;
+	}
+	.voteBtn {
+		width: 49.5%;
+		font-size: 2rem;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	main h2 {
+		font-size: 2rem;
+	}
 }

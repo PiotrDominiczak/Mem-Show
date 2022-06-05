@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { CreateMem } from "./Mem";
 import { Link } from "react-router-dom";
 import { scrollArrow } from "./Hot";
+import { MobileLogo } from "./MobileLogo";
 
 export const Regular = (mem) => {
 	const mems = useSelector((state) => state.mems);
@@ -11,6 +12,7 @@ export const Regular = (mem) => {
 	return (
 		<>
 			<div className="wrapper">
+				<MobileLogo />
 				<h2>Niedocenione</h2>
 				<p>Te niedocenione memy czekają na Twoją ocenę.</p>
 

@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { CreateMem } from "./Mem";
 import { Link } from "react-router-dom";
+import { MobileLogo } from "./MobileLogo";
 
 export const scrollArrow = (
 	<button className="arrow">
@@ -16,6 +17,7 @@ export const Favorited = () => {
 	return (
 		<>
 			<div className="wrapper">
+				<MobileLogo />
 				<h2>Twoje ulubione memy</h2>
 				<p>Zapraszamy do przejrzenia Twoich ulubionych memów.</p>
 
