@@ -10,28 +10,25 @@ export const AddMem = () => {
 	const [imgSrc, setImgSrc] = useState("");
 	const mems = useSelector((state) => state.mems);
 	const dispatch = useDispatch();
-	const thankU = document.querySelector(".displayNone");
-	const formWrapper = document.getElementById("formWrapper");
-
+	const [formVisible, setIsFormVisible] = useState(true);
 	return (
 		<div className="wrapper">
 			<MobileLogo />
 			<h2>dodaj mema</h2>
-			<p className="displayNone">
+			<p className={formVisible ? "displayNone" : "thanks"}>
 				{title !== "" && validator.isURL(imgSrc)
 					? "Dziękujemy za dodanie mema, "
 					: "Niestety tego mema nie dodaliśmy, "}
 				<span
 					onClick={(e) => {
-						thankU.classList.remove("thanks");
-						formWrapper.classList.remove("displayNone");
+						setIsFormVisible(!formVisible);
 					}}
 				>
 					dodaj jeszcze raz
 				</span>
 				!
 			</p>
-			<div id="formWrapper">
+			<div id="formWrapper" className={formVisible ? "" : "displayNone"}>
 				<form>
 					<label>Podaj tytuł swojego mema:</label>
 					<input
@@ -69,8 +66,7 @@ export const AddMem = () => {
 							alert(
 								"Jeśli chcesz dodać mema musisz podać poprawny url obrazka i wymyślić fajny tytuł"
 							);
-						thankU.classList.add("thanks");
-						formWrapper.classList.add("displayNone");
+						setIsFormVisible(!formVisible);
 					}}
 				>
 					Dodaj mema do bazy

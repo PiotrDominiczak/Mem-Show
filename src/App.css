@@ -264,12 +264,13 @@ input:focus {
 p.thanks {
 	display: block;
 }
-.displayNone span {
+p.thanks span{
 	color: goldenrod;
 	font-weight: 400;
 	transition: 0.2s linear;
 }
-.displayNone span:hover {
+
+p.thanks span:hover {
 	cursor: pointer;
 	font-weight: 900;
 }
