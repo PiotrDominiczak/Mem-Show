@@ -21,7 +21,6 @@ export const AddMem = () => {
 				{title !== "" && validator.isURL(imgSrc)
 					? "Dziękujemy za dodanie mema, "
 					: "Niestety tego mema nie dodaliśmy, "}
-				{console.log(validator.isURL(imgSrc))}
 				<span
 					onClick={(e) => {
 						thankU.classList.remove("thanks");
